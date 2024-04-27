@@ -53,6 +53,12 @@ public class ContentNotFoundException extends RuntimeException {
         this.flowFile = flowFile;
     }
 
+    public ContentNotFoundException(final FlowFileRecord flowFile, final ContentClaim claim, final Throwable t) {
+        super("Could not find content for " + claim, t);
+        this.claim = claim;
+        this.flowFile = flowFile;
+    }
+
     public ContentClaim getMissingClaim() {
         return claim;
     }
