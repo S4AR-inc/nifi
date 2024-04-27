@@ -342,7 +342,7 @@ public class LoadBalanceSession {
         } catch (final ContentNotFoundException cnfe) {
             throw new ContentNotFoundException(currentFlowFile, cnfe.getMissingClaim(), cnfe.getMessage());
         } catch (final EOFException eofe) {
-            throw new ContentNotFoundException(currentFlowFile, currentFlowFile.getMissingClaim(), eoft);
+            throw new ContentNotFoundException(currentFlowFile, currentFlowFile.getMissingClaim(), eofe);
         }
     }
 
